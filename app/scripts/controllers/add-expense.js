@@ -15,5 +15,7 @@ angular.module('ExpenseManagerApp')
 
     $scope.submit = function () {
       ExpenseService.saveExpense($scope.expense);
+      $scope.expense = {};
+      $scope.AddExpenseForm.$setPristine();
     };
   });

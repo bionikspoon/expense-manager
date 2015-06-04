@@ -8,10 +8,7 @@
  * Controller of the ExpenseManagerApp
  */
 angular.module('ExpenseManagerApp')
-  .controller('ViewSummaryCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+  .controller('ViewSummaryCtrl', function ($scope, ExpenseService) {
+    $scope.expenses = ExpenseService.getExpense();
   });
