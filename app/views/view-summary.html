@@ -17,10 +17,6 @@
     <h2>Expense Summary</h2>
 
     <!--suppress HtmlUnknownAttribute -->
-    <div bar-chart
-         data="summaryData"></div>
+    <bar-chart data="summaryData"></bar-chart>
 
-    <div ng-repeat="summary in summaryData">
-        <div>{{ summary.category }} - {{ summary.amount }}</div>
-    </div>
 </div><!-- /#view-summary -->
