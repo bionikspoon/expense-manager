@@ -1,1 +1,35 @@
-<p>This is the add-expense view.</p>
+<div id="add-expense">
+    <h2>Add Expense</h2>
+
+    <form name="AddExpenseForm"
+          id="addForm"
+          novalidate>
+        <label for="category">Category</label>
+        <select id="category"
+                ng-model="expense.category"
+                ng-options="category for category in categories">
+        </select>
+        <!-- /#category -->
+
+        <!--Input for Amount-->
+        <label for="amount">
+            Amount
+        </label>
+        <input type="number"
+               id="amount"
+               ng-model="expense.amount"
+               placeholder="Amount" /><!-- /#amount.form-control -->
+
+        <!--Input for Description-->
+        <label for="description">
+            Description
+        </label>
+        <input type="text"
+               id="description"
+               ng-model="expense.description"
+               placeholder="Description" /><!-- /#description.form-control -->
+        <button ng-click="submit()">Submit</button>
+    </form>
+    <!-- /#addForm -->
+
+</div><!-- /#add-expense -->
