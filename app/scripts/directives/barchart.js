@@ -25,7 +25,7 @@ angular.module('ExpenseManagerApp')
         scope.drawGraph = function (data) {
           var barHeight = 20;
           var barGap = 5;
-          var graphOrigin = 50;
+          var graphOrigin = 100;
           var chartWidth = chart.style('width');
           var chartHeight = scope.data.length * (barHeight + barGap);
           var color = d3.scale.category10();
