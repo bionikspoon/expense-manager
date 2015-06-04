@@ -18,7 +18,8 @@
         <input type="number"
                id="amount"
                ng-model="expense.amount"
-               placeholder="Amount" /><!-- /#amount -->
+               placeholder="Amount"
+               required /><!-- /#amount -->
 
         <!--Input for Description-->
         <label for="description">
@@ -27,8 +28,12 @@
         <input type="text"
                id="description"
                ng-model="expense.description"
-               placeholder="Description" /><!-- /#description -->
-        <button ng-click="submit()">Submit</button>
+               placeholder="Description"
+               ng-pattern="/^[a-zA-Z 0-9]+$/" required/><!-- /#description -->
+        <button ng-click="submit()"
+                ng-disabled="AddExpenseForm.$pristine || AddExpenseForm.$dirty && AddExpenseForm.$invalid">
+            Submit
+        </button>
     </form>
     <!-- /#AddExpenseForm -->
 
