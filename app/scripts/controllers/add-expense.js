@@ -9,6 +9,11 @@
  */
 angular.module('ExpenseManagerApp')
 
-  .controller('AddExpenseCtrl', function ($scope, CategoryList) {
+  .controller('AddExpenseCtrl',
+  function ($scope, CategoryList, ExpenseService) {
     $scope.categories = CategoryList;
+
+    $scope.submit = function () {
+      ExpenseService.saveExpense($scope.expense);
+    };
   });

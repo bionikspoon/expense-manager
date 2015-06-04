@@ -21,5 +21,17 @@ angular.module('ExpenseManagerApp')
       localStorage[key] = data;
     };
 
+    expenseService.getExpense = function () {
+      var expenses = [];
+      Object.keys(localStorage).forEach(function (key) {
+        if (key.substring(0, prefix.length) === prefix) {
+          var item = localStorage[key];
+          item = JSON.parse(item);
+          expenses.push(item);
+        }
+      });
+      return expenses;
+    };
+
     return expenseService;
   });
