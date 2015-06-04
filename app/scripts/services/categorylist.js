@@ -8,4 +8,10 @@
  * Value in the ExpenseManagerApp.
  */
 angular.module('ExpenseManagerApp')
-  .value('CategoryList', 42);
+
+  .value('CategoryList', [
+    'Food',
+    'Fuel',
+    'Grocery',
+    'Entertainment'
+  ]);
