@@ -13,4 +13,10 @@
         <!-- /.col-sm-2 -->
     </div>
     <!-- /.expense-details -->
+
+    <h2>Expense Summary</h2>
+
+    <div ng-repeat="summary in summaryData">
+        <div>{{ summary.category }} - {{ summary.amount }}</div>
+    </div>
 </div><!-- /#view-summary -->
