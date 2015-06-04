@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js"
+      ng-app="ExpenseManagerApp">
 <head>
   <meta charset="utf-8">
   <title>Expense Manager</title>
@@ -18,7 +19,9 @@
         href="styles/main.css">
   <!-- endbuild -->
 </head>
-<body ng-app="ExpenseManagerApp">
+<body ng-swipe-left="goLeft()"
+      ng-swipe-right="goRight()"
+      ng-controller="NavigationCtrl">
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser.
                        Please <a href="http://browsehappy.com/">upgrade your
@@ -67,6 +70,7 @@
 <script src="scripts/services/expenseservice.js"></script>
 <script src="scripts/directives/barchart.js"></script>
 <script src="scripts/services/mockdata.js"></script>
+<script src="scripts/controllers/navigation.js"></script>
 <!-- endbuild -->
 </body>
 </html>
