@@ -33,5 +33,19 @@ angular.module('ExpenseManagerApp')
       return expenses;
     };
 
+    expenseService.getCategoryTotal = function (category) {
+      var categoryTotal = 0;
+      Object.keys(localStorage).forEach(function (key) {
+        if (key.substring(0, prefix.length) === prefix) {
+          var item = localStorage[key];
+          item = JSON.parse(item);
+          if (item.category === category) {
+            categoryTotal += parseFloat(item.amount);
+          }
+        }
+      });
+      return categoryTotal;
+    };
+
     return expenseService;
   });
