@@ -10,12 +10,12 @@
 angular.module('ExpenseManagerApp')
 
   .factory('ExpenseService', function () {
-    var prefix = 'expense-manager';
+    var prefix = 'expense-manager:';
     var expenseService = {};
 
     expenseService.saveExpense = function (data) {
       var timeStamp = Math.round(new Date().getTime());
-      var key = prefix + timeStamp;
+      var key = prefix + timeStamp + Math.random();
 
       data = JSON.stringify(data);
       localStorage[key] = data;
@@ -45,6 +45,18 @@ angular.module('ExpenseManagerApp')
         }
       });
       return categoryTotal;
+    };
+
+    expenseService.reset = function () {
+      var numberOfRecordsRemoved = 0;
+      Object.keys(localStorage).forEach(function (key) {
+        if (key.substring(0, prefix.length) === prefix) {
+          localStorage.removeItem(key);
+          numberOfRecordsRemoved++;
+        }
+      });
+
+      return numberOfRecordsRemoved;
     };
 
     return expenseService;
