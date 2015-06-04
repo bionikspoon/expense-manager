@@ -18,6 +18,14 @@
     .col-sm-4 {
       width: 40%;
     }
-
   }
+
+  @media all and (min-width: 680px) {
+    #summary, #details {
+      float: left;
+      width: 48%;
+      padding: .25em;
+    }
+  }
+
 }

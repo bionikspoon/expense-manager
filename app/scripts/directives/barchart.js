@@ -23,6 +23,8 @@ angular.module('ExpenseManagerApp')
           .style('width', '95%');
 
         scope.drawGraph = function (data) {
+          chart.selectAll('*').remove();
+
           var barHeight = 20;
           var barGap = 5;
           var graphOrigin = 100;
@@ -108,13 +110,15 @@ angular.module('ExpenseManagerApp')
 
             .attr('text-anchor', 'start')
 
-
             .text(function (d) {
               return d.amount;
             });
 
         };
         scope.drawGraph(scope.data);
+        window.onresize = function () {
+          scope.$apply(scope.drawGraph(scope.data));
+        };
       }
     };
   });

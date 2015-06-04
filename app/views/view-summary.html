@@ -1,22 +1,27 @@
 <div id="view-summary">
-    <h2>Expense Details</h2>
+    <div id="summary">
+        <h2>Expense Summary</h2>
 
-    <div class="expense-details"
-         ng-repeat="expense in expenses">
-        <div class="col-sm-1">{{ $index+1 }}</div>
-        <!-- /.col-sm-1 -->
-        <div class="col-sm-3">{{ expense.category }}</div>
-        <!-- /.col-sm-3 -->
-        <div class="col-sm-4">{{ expense.description }}</div>
-        <!-- /.col-sm-4 -->
-        <div class="col-sm-2">{{ expense.amount | currency:"$" }}</div>
-        <!-- /.col-sm-2 -->
+        <!--suppress HtmlUnknownAttribute -->
+        <bar-chart data="summaryData"></bar-chart>
     </div>
-    <!-- /.expense-details -->
+    <!-- /#summary -->
 
-    <h2>Expense Summary</h2>
+    <div id="details">
+        <h2>Expense Details</h2>
 
-    <!--suppress HtmlUnknownAttribute -->
-    <bar-chart data="summaryData"></bar-chart>
-
+        <div class="expense-details"
+             ng-repeat="expense in expenses">
+            <div class="col-sm-1">{{ $index+1 }}</div>
+            <!-- /.col-sm-1 -->
+            <div class="col-sm-3">{{ expense.category }}</div>
+            <!-- /.col-sm-3 -->
+            <div class="col-sm-4">{{ expense.description }}</div>
+            <!-- /.col-sm-4 -->
+            <div class="col-sm-2">{{ expense.amount | currency:"$" }}</div>
+            <!-- /.col-sm-2 -->
+        </div>
+        <!-- /.expense-details -->
+    </div>
+    <!-- /#details -->
 </div><!-- /#view-summary -->
