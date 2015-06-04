@@ -8,16 +8,18 @@
  * Factory in the ExpenseManagerApp.
  */
 angular.module('ExpenseManagerApp')
+
   .factory('ExpenseService', function () {
-    // Service logic
-    // ...
+    var prefix = 'expense-manager';
+    var expenseService = {};
 
-    var meaningOfLife = 42;
+    expenseService.saveExpense = function (data) {
+      var timeStamp = Math.round(new Date().getTime());
+      var key = prefix + timeStamp;
 
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
+      data = JSON.stringify(data);
+      localStorage[key] = data;
     };
+
+    return expenseService;
   });
