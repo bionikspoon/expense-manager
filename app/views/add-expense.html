@@ -2,7 +2,7 @@
     <h2>Add Expense</h2>
 
     <form name="AddExpenseForm"
-          id="addForm"
+          id="AddExpenseForm"
           novalidate>
         <label for="category">Category</label>
         <select id="category"
@@ -18,7 +18,7 @@
         <input type="number"
                id="amount"
                ng-model="expense.amount"
-               placeholder="Amount" /><!-- /#amount.form-control -->
+               placeholder="Amount" /><!-- /#amount -->
 
         <!--Input for Description-->
         <label for="description">
@@ -27,9 +27,9 @@
         <input type="text"
                id="description"
                ng-model="expense.description"
-               placeholder="Description" /><!-- /#description.form-control -->
+               placeholder="Description" /><!-- /#description -->
         <button ng-click="submit()">Submit</button>
     </form>
-    <!-- /#addForm -->
+    <!-- /#AddExpenseForm -->
 
 </div><!-- /#add-expense -->
