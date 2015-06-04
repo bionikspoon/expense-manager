@@ -16,6 +16,10 @@
 
     <h2>Expense Summary</h2>
 
+    <!--suppress HtmlUnknownAttribute -->
+    <div bar-chart
+         data="summaryData"></div>
+
     <div ng-repeat="summary in summaryData">
         <div>{{ summary.category }} - {{ summary.amount }}</div>
     </div>
