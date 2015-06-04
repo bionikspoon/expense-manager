@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name expenseManagerApp
+ * @name ExpenseManagerApp
  * @description
- * # expenseManagerApp
+ * # ExpenseManagerApp
  *
  * Main module of the application.
  */
 angular
-  .module('expenseManagerApp', [
+  .module('ExpenseManagerApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -28,6 +28,18 @@ angular
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .when('/home', {
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
+      })
+      .when('/add-expense', {
+        templateUrl: 'views/add-expense.html',
+        controller: 'AddExpenseCtrl'
+      })
+      .when('/view-summary', {
+        templateUrl: 'views/view-summary.html',
+        controller: 'ViewSummaryCtrl'
       })
       .otherwise({
         redirectTo: '/'

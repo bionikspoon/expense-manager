@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: ViewSummaryCtrl', function () {
 
   // load the controller's module
   beforeEach(module('ExpenseManagerApp'));
 
-  var MainCtrl,
+  var ViewSummaryCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    ViewSummaryCtrl = $controller('ViewSummaryCtrl', {
       $scope: scope
     });
   }));

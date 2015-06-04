@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name expenseManagerApp.controller:MainCtrl
+ * @name ExpenseManagerApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the expenseManagerApp
+ * Controller of the ExpenseManagerApp
  */
-angular.module('expenseManagerApp')
+angular.module('ExpenseManagerApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name ExpenseManagerApp.controller:AboutCtrl
+ * @name ExpenseManagerApp.controller:ViewSummaryCtrl
  * @description
- * # AboutCtrl
+ * # ViewSummaryCtrl
  * Controller of the ExpenseManagerApp
  */
 angular.module('ExpenseManagerApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('ViewSummaryCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
