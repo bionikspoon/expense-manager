@@ -10,18 +10,16 @@
 angular.module('ExpenseManagerApp')
 
   .controller('ViewSummaryCtrl',
-  function ($scope, ExpenseService, CategoryList) {
-    $scope.expenses = ExpenseService.getExpense();
+  function ($scope, ExpenseService) {
+    $scope.expenses = ExpenseService.expenses;
 
-    $scope.summaryData = [];
+    ExpenseService.getExpenses();
 
-    CategoryList.forEach(function (category) {
-      var categoryTotal = ExpenseService.getCategoryTotal(category);
-      $scope.summaryData.push({
-        category: category,
-        amount: categoryTotal
-      });
-    });
+    $scope.summaryData = ExpenseService.expensesByCategory;
+
+    ExpenseService.getExpensesByCategory();
+
+
 
     $scope.toggleActive = function (index) {
       if ($scope.active === index) {
@@ -33,6 +31,8 @@ angular.module('ExpenseManagerApp')
     };
 
     $scope.removeExpense = function (expense) {
+      $scope.active = null;
       ExpenseService.removeExpense(expense);
+
     };
   });

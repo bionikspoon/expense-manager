@@ -116,6 +116,13 @@ angular.module('ExpenseManagerApp')
 
         };
         scope.drawGraph(scope.data);
+
+        scope.$watchCollection('data', function (data) {
+
+          scope.drawGraph(data);
+
+        });
+
         window.onresize = function () {
           scope.$apply(scope.drawGraph(scope.data));
         };
