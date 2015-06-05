@@ -17,5 +17,26 @@
     "angular-mocks": "^1.3.0"
   },
   "appPath": "app",
-  "moduleName": "ExpenseManagerApp"
+  "moduleName": "ExpenseManagerApp",
+  "homepage": "https://github.com/bionikspoon/expense-manager",
+  "authors": [
+    "Manu Phatak <bionikspoon@gmail.com>"
+  ],
+  "main": "server.js",
+  "keywords": [
+    "Manu",
+    "Phatak",
+    "angular",
+    "mobile",
+    "d3",
+    "localStorage"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

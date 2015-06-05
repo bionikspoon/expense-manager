@@ -1,11 +1,10 @@
 {
-  "name": "ExpenseManager",
+  "name": "expense-manager",
   "version": "0.0.0",
   "dependencies": {
     "express": "^4.12.4",
     "morgan": "^1.5.3"
   },
-  "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.0.0",
@@ -40,6 +39,30 @@
     "npm": "2.11.*"
   },
   "scripts": {
-    "test": "grunt test"
-  }
+    "test": "grunt test",
+    "start": "node server.js"
+  },
+  "description": "Angular app optimized for mobile, using d3js.org/ to graph and localStorage to manage data.",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "angular",
+    "d3",
+    "localStorage",
+    "mobile",
+    "Manu",
+    "Phatak"
+  ],
+  "author": "Manu Phatak <bionikspoon@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bionikspoon/expense-manager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bionikspoon/expense-manager/issues"
+  },
+  "homepage": "https://github.com/bionikspoon/expense-manager#readme"
 }
