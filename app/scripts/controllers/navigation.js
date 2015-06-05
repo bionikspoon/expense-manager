@@ -8,33 +8,44 @@
  * Controller of the ExpenseManagerApp
  */
 angular.module('ExpenseManagerApp').controller('NavigationCtrl',
-  function ($scope, $location) {
+  function ($scope, $location, $q, $timeout) {
+    $scope.slidingDirection = 'slide-right';
+
     var navigator = function (incrementer) {
-      var nextUrl;
+
       var pages = [
         '/',
         '/add-expense',
         '/view-summary'
       ];
-      $scope.slidingDirection = (incrementer===1)? 'slide-right' : 'slide-left';
-      nextUrl = '';
+
       var currentPage = $location.path();
       var lastPageIndex = pages.length - 1;
       var pageIndex = pages.indexOf(currentPage);
       var direction = pageIndex + incrementer;
 
-      if (direction === -1) direction = lastPageIndex;
-      if (direction > lastPageIndex) direction = 0;
+      if (direction === -1) {direction = lastPageIndex;}
+      if (direction > lastPageIndex) {direction = 0;}
 
-      nextUrl = pages[direction];
+      var nextUrl = pages[direction] || '';
 
       $location.url(nextUrl);
     };
 
     $scope.goLeft = function () {
-      navigator(-1);
+      $q.when($scope.slidingDirection = 'slide-left')
+
+        .then($timeout(function () {
+          navigator(-1);
+        }));
+
     };
     $scope.goRight = function () {
-      navigator(1);
+      $q.when($scope.slidingDirection = 'slide-right')
+
+        .then($timeout(function () {
+          navigator(1);
+        }));
+
     };
   });

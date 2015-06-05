@@ -15,7 +15,7 @@ angular.module('ExpenseManagerApp')
       },
       template: '<div id="chart"></div>',
       restrict: 'E',
-      link: function (scope, element, attrs) {
+      link: function (scope) {
         var chart = d3.select('#chart')
 
           .append('svg')

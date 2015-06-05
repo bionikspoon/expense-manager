@@ -8,10 +8,5 @@
  * Controller of the ExpenseManagerApp
  */
 angular.module('ExpenseManagerApp')
-  .controller('HomeCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('HomeCtrl', function () {
   });
