@@ -13,11 +13,7 @@ angular
   .module('ExpenseManagerApp', [
     'ngAnimate',
     'ngAria',
-    'ngCookies',
-    'ngMessages',
-    'ngResource',
     'ngRoute',
-    'ngSanitize',
     'ngTouch'
   ])
 
