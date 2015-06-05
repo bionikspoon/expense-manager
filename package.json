@@ -1,7 +1,10 @@
 {
   "name": "ExpenseManager",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.12.4",
+    "morgan": "^1.5.3"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -33,7 +36,8 @@
     "time-grunt": "^1.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "iojs": "2.1.*",
+    "npm": "2.11.*"
   },
   "scripts": {
     "test": "grunt test"
