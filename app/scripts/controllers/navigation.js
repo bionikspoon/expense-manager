@@ -16,6 +16,7 @@ angular.module('ExpenseManagerApp').controller('NavigationCtrl',
         '/add-expense',
         '/view-summary'
       ];
+      $scope.slidingDirection = (incrementer===1)? 'slide-right' : 'slide-left';
       nextUrl = '';
       var currentPage = $location.path();
       var lastPageIndex = pages.length - 1;

@@ -111,7 +111,7 @@ angular.module('ExpenseManagerApp')
             .attr('text-anchor', 'start')
 
             .text(function (d) {
-              return d.amount;
+              return d.amount.toFixed(2);
             });
 
         };

@@ -42,5 +42,45 @@ h1 {
 }
 
 .page-slide {
+  padding: 2%;
+  position: absolute;
+  width: 85%;
+  min-height: 90%;
+  opacity: .8;
+  background: #222222;
+  border: thin solid #111;
+  margin: 0 5% 5%;
+
+  &.ng-enter, &.ng-leave {
+    transition: all 0.9s ease-out;
+  }
+  &.slide-right {
+    &.ng-leave {
+      left: 0;
+    }
+    &.ng-leave-active {
+      left: 100%;
+    }
+    &.ng-enter {
+      left: -100%;
+    }
+    &.ng-enter-active {
+      left: 0;
+    }
+  }
+  &.slide-left {
+    &.ng-leave {
+      left: 0;
+    }
+    &.ng-leave-active {
+      left: -100%;
+    }
+    &.ng-enter {
+      left: 100%;
+    }
+    &.ng-enter-active {
+      left: 0;
+    }
+  }
 
 }

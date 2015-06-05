@@ -16,6 +16,7 @@ angular.module('ExpenseManagerApp')
     expenseService.saveExpense = function (data) {
       var timeStamp = Math.round(new Date().getTime());
       var key = prefix + timeStamp + Math.random();
+      data.amount = Math.round(data.amount * 100) / 100;
 
       data = JSON.stringify(data);
       localStorage[key] = data;
