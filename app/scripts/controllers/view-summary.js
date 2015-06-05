@@ -14,6 +14,7 @@ angular.module('ExpenseManagerApp')
     $scope.expenses = ExpenseService.getExpense();
 
     $scope.summaryData = [];
+
     CategoryList.forEach(function (category) {
       var categoryTotal = ExpenseService.getCategoryTotal(category);
       $scope.summaryData.push({
@@ -21,4 +22,17 @@ angular.module('ExpenseManagerApp')
         amount: categoryTotal
       });
     });
+
+    $scope.toggleActive = function (index) {
+      if ($scope.active === index) {
+        $scope.active = null;
+      } else {
+        $scope.active = index;
+      }
+
+    };
+
+    $scope.removeExpense = function (expense) {
+      ExpenseService.removeExpense(expense);
+    };
   });

@@ -9,7 +9,7 @@
  */
 angular.module('ExpenseManagerApp')
 
-  .factory('ExpenseService', function () {
+  .factory('ExpenseService', function ($log) {
     var prefix = 'expense-manager:';
     var expenseService = {};
 
@@ -28,6 +28,7 @@ angular.module('ExpenseManagerApp')
         if (key.substring(0, prefix.length) === prefix) {
           var item = localStorage[key];
           item = JSON.parse(item);
+          item.key = key;
           expenses.push(item);
         }
       });
@@ -46,6 +47,11 @@ angular.module('ExpenseManagerApp')
         }
       });
       return categoryTotal;
+    };
+
+    expenseService.removeExpense = function (expense) {
+      $log.debug('expense: ', expense);
+      localStorage.removeItem(expense.key);
     };
 
     expenseService.reset = function () {

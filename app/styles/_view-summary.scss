@@ -7,17 +7,61 @@
       border-bottom: thin solid #eaeaea;
     }
     .col-sm-1 {
-      width: 5%;
+      opacity: 1;
+      position: relative;
+      left: 0;
+      &.ng-hide-add.ng-hide-add-active,
+      &.ng-hide-remove.ng-hide-remove-active {
+        transition: all .5s ease;
+      }
+      &.ng-hide {
+        opacity: 0;
+        left: 5%;
+        transform: scale(0.7, 1);
+      }
     }
-    .col-sm-2 {
-      width: 20%;
+    button.remove-expense {
+      border: thin solid #cccccc;
+      background: none;
+      color: #eaeaea;
+      margin-bottom: -2px;
+
     }
-    .col-sm-3 {
-      width: 25%;
+    &.not-active {
+      .col-sm-1 {
+        width: 5%;
+      }
+      .col-sm-2 {
+        width: 20%;
+        transition: width .5s ease;
+      }
+      .col-sm-3 {
+        width: 25%;
+        transition: width .5s ease;
+      }
+      .col-sm-4 {
+        width: 40%;
+        transition: width .5s ease;
+      }
     }
-    .col-sm-4 {
-      width: 40%;
+    &.active {
+      .col-sm-1 {
+        width: 5%;
+      }
+      .col-sm-2 {
+        width: 19%;
+        transition: width .5s ease;
+      }
+      .col-sm-3 {
+        width: 24%;
+        transition: width .5s ease;
+      }
+      .col-sm-4 {
+        width: 37%;
+        transition: width .5s ease;
+      }
     }
+
   }
 
   @media all and (min-width: 680px) {
