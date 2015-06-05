@@ -9,7 +9,7 @@
  */
 angular.module('ExpenseManagerApp')
 
-  .factory('ExpenseService', function ($q, $log, CategoryList) {
+  .factory('ExpenseService', function ($q, CategoryList) {
     var prefix = 'expense-manager:';
     var expenseService = {};
     expenseService.expenses = [];
@@ -75,7 +75,6 @@ angular.module('ExpenseManagerApp')
     };
 
     expenseService.removeExpense = function (expense) {
-      $log.debug('expense: ', expense);
       localStorage.removeItem(expense.key);
       expenseService.getExpenses();
     };
